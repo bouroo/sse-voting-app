@@ -38,7 +38,6 @@
     try {
       await axios.get(`http://localhost:8080/vote?candidate=${candidate}`);
       voted = true; // Set voted to true after voting
-      // Optionally, you can set a timeout to reset the voted state
       setTimeout(() => {
         voted = false; // Allow voting again after 5 seconds
       }, 5000);
@@ -46,7 +45,7 @@
       errorMessage = "Error voting. Please try again.";
       console.error("Error voting:", error);
     } finally {
-      voting = false; // Set voting to false after voting
+      voting = false; // Set voting to false after voting mock for new user ready to vote
     }
   }
 
